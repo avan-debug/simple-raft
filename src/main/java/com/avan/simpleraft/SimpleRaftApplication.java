@@ -4,10 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-import com.avan.simpleraft.rpc.service.HelloService;
-import com.avan.simpleraft.rpc.protocol.NettyServer;
-import com.avan.simpleraft.rpc.service.HelloServiceImpl;
-import com.avan.simpleraft.rpc.spring.SpringBeansManager;
 
 @ComponentScan(basePackages = {"com.avan.simpleraft"})
 @SpringBootApplication

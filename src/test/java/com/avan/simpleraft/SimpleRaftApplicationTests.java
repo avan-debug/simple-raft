@@ -117,8 +117,8 @@ class SimpleRaftApplicationTests {
 		// rpcServer.startRpcServer();
 		RpcClient rpcClient = new RpcClient(ip, Integer.parseInt(port));
 		AppendParam appendParam = new AppendParam(0, ip + ":" + port, ip + ":" + port, 0, 0, null, 0);
-		Request request = new Request(RequestType.A_ENTRIES, -1, appendParam, ip + ":" + port);
-		AppendResult appendResult = rpcClient.send(request);
+		// Request request = new Request(RequestType.A_ENTRIES, -1, appendParam, ip + ":" + port);
+		// AppendResult appendResult = rpcClient.send(request);
 		System.out.println();
 	}
 }

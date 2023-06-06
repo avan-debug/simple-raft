@@ -1,0 +1,76 @@
+2023/06/06-20:16:50.585707 9ab4 RocksDB version: 5.5.1
+2023/06/06-20:16:50.585781 9ab4 Git sha rocksdb_build_git_sha:@72cf57d4b40e5c809839afc1c62dc13e533b8ec6@
+2023/06/06-20:16:50.585821 9ab4 Compile date Jul  5 2017
+2023/06/06-20:16:50.585867 9ab4 DB SUMMARY
+2023/06/06-20:16:50.586594 9ab4 CURRENT file:  CURRENT
+2023/06/06-20:16:50.586629 9ab4 IDENTITY file:  IDENTITY
+2023/06/06-20:16:50.586720 9ab4 MANIFEST file:  MANIFEST-000032 size: 59 Bytes
+2023/06/06-20:16:50.586754 9ab4 SST files in ./rocksdb/9000/logModule dir, Total Num: 0, files: 
+2023/06/06-20:16:50.586782 9ab4 Write Ahead Log file in ./rocksdb/9000/logModule: 000033.log size: 0 ; 
+2023/06/06-20:16:50.586810 9ab4                         Options.error_if_exists: 0
+2023/06/06-20:16:50.586843 9ab4                       Options.create_if_missing: 1
+2023/06/06-20:16:50.586942 9ab4                         Options.paranoid_checks: 1
+2023/06/06-20:16:50.586958 9ab4                                     Options.env: 000001FA7AA615A0
+2023/06/06-20:16:50.586970 9ab4                                Options.info_log: 000001FA7A1D87F0
+2023/06/06-20:16:50.586982 9ab4                Options.max_file_opening_threads: 16
+2023/06/06-20:16:50.586994 9ab4                               Options.use_fsync: 0
+2023/06/06-20:16:50.587006 9ab4                       Options.max_log_file_size: 0
+2023/06/06-20:16:50.587017 9ab4                  Options.max_manifest_file_size: 18446744073709551615
+2023/06/06-20:16:50.587029 9ab4                   Options.log_file_time_to_roll: 0
+2023/06/06-20:16:50.587041 9ab4                       Options.keep_log_file_num: 1000
+2023/06/06-20:16:50.587053 9ab4                    Options.recycle_log_file_num: 0
+2023/06/06-20:16:50.587064 9ab4                         Options.allow_fallocate: 1
+2023/06/06-20:16:50.587076 9ab4                        Options.allow_mmap_reads: 0
+2023/06/06-20:16:50.587088 9ab4                       Options.allow_mmap_writes: 0
+2023/06/06-20:16:50.587099 9ab4                        Options.use_direct_reads: 0
+2023/06/06-20:16:50.587111 9ab4                        Options.use_direct_io_for_flush_and_compaction: 0
+2023/06/06-20:16:50.587123 9ab4          Options.create_missing_column_families: 0
+2023/06/06-20:16:50.587135 9ab4                              Options.db_log_dir: 
+2023/06/06-20:16:50.587146 9ab4                                 Options.wal_dir: ./rocksdb/9000/logModule
+2023/06/06-20:16:50.587158 9ab4                Options.table_cache_numshardbits: 6
+2023/06/06-20:16:50.587170 9ab4                      Options.max_subcompactions: 1
+2023/06/06-20:16:50.587181 9ab4                  Options.max_background_flushes: 1
+2023/06/06-20:16:50.587193 9ab4                         Options.WAL_ttl_seconds: 0
+2023/06/06-20:16:50.587205 9ab4                       Options.WAL_size_limit_MB: 0
+2023/06/06-20:16:50.587216 9ab4             Options.manifest_preallocation_size: 4194304
+2023/06/06-20:16:50.587228 9ab4                     Options.is_fd_close_on_exec: 1
+2023/06/06-20:16:50.587240 9ab4                   Options.advise_random_on_open: 1
+2023/06/06-20:16:50.587251 9ab4                    Options.db_write_buffer_size: 0
+2023/06/06-20:16:50.587263 9ab4         Options.access_hint_on_compaction_start: 1
+2023/06/06-20:16:50.587275 9ab4  Options.new_table_reader_for_compaction_inputs: 0
+2023/06/06-20:16:50.587286 9ab4               Options.compaction_readahead_size: 0
+2023/06/06-20:16:50.587298 9ab4           Options.random_access_max_buffer_size: 1048576
+2023/06/06-20:16:50.587310 9ab4           Options.writable_file_max_buffer_size: 1048576
+2023/06/06-20:16:50.587321 9ab4                      Options.use_adaptive_mutex: 0
+2023/06/06-20:16:50.587333 9ab4                            Options.rate_limiter: 0000000000000000
+2023/06/06-20:16:50.587345 9ab4     Options.sst_file_manager.rate_bytes_per_sec: 0
+2023/06/06-20:16:50.587357 9ab4                          Options.bytes_per_sync: 0
+2023/06/06-20:16:50.587368 9ab4                      Options.wal_bytes_per_sync: 0
+2023/06/06-20:16:50.587380 9ab4                       Options.wal_recovery_mode: 2
+2023/06/06-20:16:50.587419 9ab4                  Options.enable_thread_tracking: 0
+2023/06/06-20:16:50.587433 9ab4                  Options.enable_pipelined_write: 0
+2023/06/06-20:16:50.587445 9ab4         Options.allow_concurrent_memtable_write: 1
+2023/06/06-20:16:50.587457 9ab4      Options.enable_write_thread_adaptive_yield: 1
+2023/06/06-20:16:50.587468 9ab4             Options.write_thread_max_yield_usec: 100
+2023/06/06-20:16:50.587480 9ab4            Options.write_thread_slow_yield_usec: 3
+2023/06/06-20:16:50.587492 9ab4                               Options.row_cache: None
+2023/06/06-20:16:50.587504 9ab4                              Options.wal_filter: None
+2023/06/06-20:16:50.587515 9ab4             Options.avoid_flush_during_recovery: 0
+2023/06/06-20:16:50.587527 9ab4             Options.allow_ingest_behind: 0
+2023/06/06-20:16:50.587539 9ab4             Options.base_background_compactions: 1
+2023/06/06-20:16:50.587552 9ab4             Options.max_background_compactions: 1
+2023/06/06-20:16:50.587563 9ab4             Options.avoid_flush_during_shutdown: 0
+2023/06/06-20:16:50.587575 9ab4             Options.delayed_write_rate : 16777216
+2023/06/06-20:16:50.587587 9ab4             Options.max_total_wal_size: 0
+2023/06/06-20:16:50.587598 9ab4             Options.delete_obsolete_files_period_micros: 21600000000
+2023/06/06-20:16:50.587610 9ab4                   Options.stats_dump_period_sec: 600
+2023/06/06-20:16:50.587622 9ab4                          Options.max_open_files: -1
+2023/06/06-20:16:50.587634 9ab4 Compression algorithms supported:
+2023/06/06-20:16:50.587653 9ab4 	Snappy supported: 0
+2023/06/06-20:16:50.587665 9ab4 	Zlib supported: 0
+2023/06/06-20:16:50.587676 9ab4 	Bzip supported: 0
+2023/06/06-20:16:50.587688 9ab4 	LZ4 supported: 0
+2023/06/06-20:16:50.587700 9ab4 	ZSTD supported: 0
+2023/06/06-20:16:50.587716 9ab4 Fast CRC32 supported: 1
+2023/06/06-20:16:50.588490 9ab4 [c:\users\aretter\code\rocksdb\db\db_impl.cc:216] Shutdown: canceling all background work
+2023/06/06-20:16:50.588556 9ab4 [c:\users\aretter\code\rocksdb\db\db_impl.cc:342] Shutdown complete
