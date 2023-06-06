@@ -33,10 +33,10 @@ public class RpcClient {
     }
 
     public <R> R send(Request request, int timeout){
-		InvocationHandler handler = new RpcInvokerProxy(request.getIp(), request.getPort(), nettyClient, timeout);
-		RpcServerInterface proxy = (RpcServerInterface)Proxy.newProxyInstance(RpcServerInterface.class.getClassLoader(), new Class<?>[]{RpcServerInterface.class}, handler);
-		Response<R> res = (Response<R>)proxy.handleReq(request);
-		return res.getResult();
+      InvocationHandler handler = new RpcInvokerProxy(request.getIp(), request.getPort(), nettyClient, timeout);
+      RpcServerInterface proxy = (RpcServerInterface)Proxy.newProxyInstance(RpcServerInterface.class.getClassLoader(), new Class<?>[]{RpcServerInterface.class}, handler);
+      Response<R> res = (Response<R>)proxy.handleReq(request);
+      return res.getResult();
     }
 
     public void close(){

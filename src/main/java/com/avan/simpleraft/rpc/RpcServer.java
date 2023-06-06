@@ -67,7 +67,6 @@ public class RpcServer extends RpcServerHandler implements RpcServerInterface{
             ClientResponse clientResponse = raftNode.proposeRequest(request);
             return new Response<ClientResponse>(clientResponse);
         }
-
         return null;
     }
 

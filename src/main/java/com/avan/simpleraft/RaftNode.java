@@ -278,24 +278,57 @@ public class RaftNode{
             }
         }
 
+        // 幂等性判断 在这里判断是因为该函数是同步的：即只有一个线程在执行
+        if(stateMachine.getString(clientRequest.getRequestID()) != null){
+            log.info("request has been proposed. request id : {}", clientRequest.getRequestID());
+            return ClientResponse.ok();
+        }
+
         // 写命令
-        Command command = Command
-            .builder()
-            .commandType(clientRequest.getType())
-            .key(clientRequest.getKey())
-            .val(clientRequest.getVal())
-            .build();
+        else if(clientRequest.getType() == CommandType.PUT){
+            Command command = Command
+                .builder()
+                .commandType(clientRequest.getType())
+                .key(clientRequest.getKey())
+                .val(clientRequest.getVal())
+                .build();
 
-        LogEntry logEntry = LogEntry
-            .builder()
-            .cmd(command)
-            .requestId(clientRequest.getRequestID())
-            .build();
+            LogEntry logEntry = LogEntry
+                .builder()
+                .cmd(command)
+                .requestId(clientRequest.getRequestID())
+                .build();
 
+            logModule.write(logEntry);
+            List<Future<Boolean>> futureList = new ArrayList<>();
 
-        
+            Semaphore semaphore = new Semaphore(0);
+            for (String peer : peerAddrs) {
+                futureList.add(replication(peer, logEntry, semaphore));
+            }
 
-		return null;
+            try {
+                semaphore.tryAcquire((int)Math.floor((peerAddrs.size() + 1) / 2), 6000, TimeUnit.MILLISECONDS);
+            } catch (Exception e) {
+                log.error("get semphore error : {}", e);
+            }
+
+            int successNum = getReplicationResult(futureList);
+            // 成功
+            if(successNum * 2 > peerAddrs.size()){
+                // 更新
+                setLastCommit(logEntry.getIndex());
+                // 应用到状态机
+                stateMachine.apply(logEntry);
+                return ClientResponse.ok();
+            }else{
+
+                logModule.deleteFromStartIndex(logEntry.getIndex());
+                log.info("commit fail, logEntry : {}", logEntry);
+                return ClientResponse.fail();
+            }
+        }
+        return ClientResponse.fail();
 	}
 
     private ClientResponse redirect(Request request) {
@@ -764,6 +797,10 @@ public class RaftNode{
             updatePreElectionTime();
             voteLock.unlock();
         }
+    }
+
+    private void setLastCommit(Long index) {
+        stateMachine.setCommit(index);
     }
 
     public long getLastCommit(){

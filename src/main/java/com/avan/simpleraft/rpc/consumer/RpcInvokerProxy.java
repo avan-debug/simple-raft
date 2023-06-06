@@ -25,8 +25,8 @@ import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class RpcInvokerProxy<T> implements InvocationHandler, MethodInterceptor{
 
     private String address;
