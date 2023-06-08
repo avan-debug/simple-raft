@@ -15,7 +15,7 @@ public class RaftClient {
 
             if(n == 2){
                 if(tmp[0].equals("del")){
-
+                    
                 }else if(tmp[0].equals("get")){
 
                 }
